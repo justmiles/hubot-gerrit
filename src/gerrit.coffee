@@ -269,7 +269,7 @@ eventStreamMe = (robot, gerrit) ->
       formatter = attachments.events[json.type]
 
     else
-      formatter = formatter.events[json.type]
+      formatter = formatters.events[json.type]
 
     msg = try
       formatter json if formatter
