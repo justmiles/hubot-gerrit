@@ -269,7 +269,7 @@ eventStreamMe = (robot, gerrit) ->
       formatter = attachments.events[json.type]
 
     else
-      formatter = formatter.events[json.type]
+      formatter = formatters.events[json.type]
 
     msg = try
       formatter json if formatter
@@ -288,4 +288,4 @@ eventStreamMe = (robot, gerrit) ->
               room: room
             content: msg
         else
-          robot.send room: room, "Gerrit: #{msg}" for room in robotRooms robot
+          robot.send room: room, "Gerrit: #{msg}"
